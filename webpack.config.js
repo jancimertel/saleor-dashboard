@@ -78,6 +78,12 @@ module.exports = (env, argv) => {
   }
 
   return {
+    watchOptions: {
+      ignored: [
+        path.posix.resolve(__dirname, "./node_modules"),
+        path.posix.resolve(__dirname, "./build")
+      ]
+    },
     devServer: {
       compress: true,
       contentBase: path.join(__dirname, dashboardBuildPath),
